@@ -12,6 +12,7 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomepageComponent } from './homepage/homepage.component';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     RecipeListComponent,
     RecipeItemComponent,
     ShoppingEditComponent,
-    HomepageComponent
+    HomepageComponent,
+    DropdownDirective,
   ],
   imports: [
     BrowserModule,
