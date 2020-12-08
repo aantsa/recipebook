@@ -12,26 +12,34 @@ export class RecipesService {
 
   constructor(private shoppingListService: ShoppingListService) { }
 
-  private recipes: Recipe[] = [
-    new Recipe('Pizza',
-     'Extra cheesy pepperoni pizza',
-      "https://cdn.pixabay.com/photo/2020/02/04/12/14/pepperoni-4818019_1280.jpg", 
-      [
-        new Ingredient('Pepperoni', 1),
-        new Ingredient('Cheese', 5)
-      ]),
-    new Recipe('Hamburger',
-     'Hamburger with a juicy steak',
-      "https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_1280.jpg",
-      [
-        new Ingredient('Buns', 2),
-        new Ingredient('Steak', 1),
-        new Ingredient('Tomato', 1),
-        new Ingredient('Cheese', 1),
-        new Ingredient('Pickle', 3),
-        new Ingredient('Onion', 3)
-      ])
-  ];
+  /* DUMMY DATA */
+  // private recipes: Recipe[] = [
+  //   new Recipe('Pizza',
+  //    'Extra cheesy pepperoni pizza',
+  //     "https://cdn.pixabay.com/photo/2020/02/04/12/14/pepperoni-4818019_1280.jpg", 
+  //     [
+  //       new Ingredient('Pepperoni', 1),
+  //       new Ingredient('Cheese', 5)
+  //     ]),
+  //   new Recipe('Hamburger',
+  //    'Hamburger with a juicy steak',
+  //     "https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_1280.jpg",
+  //     [
+  //       new Ingredient('Buns', 2),
+  //       new Ingredient('Steak', 1),
+  //       new Ingredient('Tomato', 1),
+  //       new Ingredient('Cheese', 1),
+  //       new Ingredient('Pickle', 3),
+  //       new Ingredient('Onion', 3)
+  //     ])
+  // ];
+
+  private recipes: Recipe[] = [];
+
+  setRecipes(recipes: Recipe[]){
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
+  }
 
   getRecipes() {
     return this.recipes.slice();
