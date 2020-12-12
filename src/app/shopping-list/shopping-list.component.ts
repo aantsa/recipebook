@@ -20,7 +20,6 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
       (ingredients: Ingredient[]) => {
         this.ingredients = ingredients;
       })
-
   }
   onEditItem(i: number){
     this.shoppingListService.startedEditing.next(i);
