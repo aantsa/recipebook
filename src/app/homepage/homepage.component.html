@@ -2,9 +2,13 @@
   <div style='text-align: center;'>
       <h1>The Recipe Book</h1>
       <p class="lead">Create magical new recipes or use existing ones <br> to conjure delicious meals</p>
-      <div class="text-center">
+      <div *ngIf="!isAuthenticated" class="text-center">
           <button  class="btn btn-dark btn-lg mr-2" routerLink='/auth'routerLinkActive='active'>Login</button>
           <button class="btn btn-secondary btn-lg" routerLink='/auth'routerLinkActive='active' >Sign up</button>
       </div>
+      <div *ngIf="isAuthenticated" class="text-center">
+        <button  class="btn btn-dark btn-lg mr-2" routerLink='/recipes'routerLinkActive='active'>Recipes</button>
+        <button class="btn btn-secondary btn-lg" routerLink='/shopping-list'routerLinkActive='active' >Shopping List</button>
+    </div>
   </div>
 </div>

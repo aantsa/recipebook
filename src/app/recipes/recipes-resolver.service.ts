@@ -7,12 +7,12 @@ import { Recipe } from './recipe.model';
 
 @Injectable()
 export class RecipesResolverService implements Resolve<Recipe[]> {
-    constructor(private dataStorageService: DataStorageService, private recipesService: RecipesService){}
-    
+    constructor(private dataStorageService: DataStorageService, private recipesService: RecipesService) { }
+
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Recipe[] | Observable<Recipe[]> | Promise<Recipe[]> {
         const recipes = this.recipesService.getRecipes();
 
-        if(recipes.length === 0){
+        if (recipes.length === 0) {
             return this.dataStorageService.fetchRecipes();
         } else {
             return recipes;

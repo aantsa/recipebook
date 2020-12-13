@@ -2,7 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Recipe } from '../recipes/recipe.model';
 import { RecipesService } from '../services/recipes.service';
-import { exhaustMap, map, take, tap } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { AuthService } from '../auth/auth.service';
 
 @Injectable()
@@ -13,7 +13,6 @@ export class DataStorageService {
         const recipes = this.recipesService.getRecipes();
         this.http.put('https://ng-recipe-book-c6a27-default-rtdb.europe-west1.firebasedatabase.app/recipes.json', recipes)
             .subscribe(response => {
-                console.log(response)
             }, error => {
                 alert('Error has occured');
             });

@@ -11,12 +11,12 @@ import { AuthResponseData, AuthService } from './auth.service';
     selector: 'app-auth',
     templateUrl: './auth.component.html'
 })
-export class AuthComponent implements OnDestroy{
+export class AuthComponent implements OnDestroy {
     isLoginMode = true;
     isLoading = false;
     error: string = null;
     @ViewChild(PlaceHolderDirective, { static: false }) alertHost: PlaceHolderDirective;
-    
+
     private closedSub: Subscription;
 
     constructor(private authService: AuthService, private router: Router, private componentFactoryResolver: ComponentFactoryResolver) { }
@@ -43,11 +43,9 @@ export class AuthComponent implements OnDestroy{
         }
 
         authObservable.subscribe(res => {
-            console.log(res);
             this.isLoading = false;
             this.router.navigate(['/recipes']);
         }, errorMessage => {
-            console.log(errorMessage);
             this.error = errorMessage;
             this.showErrorAlert(errorMessage);
             this.isLoading = false;
@@ -60,7 +58,7 @@ export class AuthComponent implements OnDestroy{
     }
 
     ngOnDestroy(): void {
-        if(this.closedSub){
+        if (this.closedSub) {
             this.closedSub.unsubscribe();
         }
     }
