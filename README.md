@@ -2,6 +2,8 @@
 ![recipebook](https://user-images.githubusercontent.com/49878974/102020091-abf47e00-3d7f-11eb-969c-a4f40c44caeb.png)
 The app is live on [Firebase](https://ng-recipe-book-c6a27.web.app/)
 
+edit [10.12.2022] the app is live but is not working properly. Please refer to the existing code.
+
 Created recipebook for storing new recipes and adding it's ingredients to shopping list.
 
 Backend, database, authentication and hosting is done by firebase. Frontend made with Angular 10 and bootstrap 4.
